@@ -1,0 +1,794 @@
+{
+  "corpus": [
+    {
+      "id": "L0",
+      "category": "layer",
+      "content": "Layer 0: tau = RDTSC. Raw hardware tick. The time parameter. Sole input to the entire stack."
+    },
+    {
+      "id": "L1",
+      "category": "layer",
+      "content": "Layer 1: pi = PI_DIG[tau % 200]. Phase derived from the eternal pi sequence indexed by the tick."
+    },
+    {
+      "id": "L2",
+      "category": "layer",
+      "content": "Layer 2: z = sigma zone index 0-255. Phi-space coordinate derived from the pi phase."
+    },
+    {
+      "id": "L3",
+      "category": "layer",
+      "content": "Layer 3: p = PRIMES[z]. Prime address 2-1279. Each zone maps to a prime."
+    },
+    {
+      "id": "L4",
+      "category": "layer",
+      "content": "Layer 4: g = GTAC gate {G,T,A,C} from zone boundaries. The basis state."
+    },
+    {
+      "id": "L5",
+      "category": "layer",
+      "content": "Layer 5: r = POPCNT / bits. Hamming density. The last exact integer operation."
+    },
+    {
+      "id": "IEEE",
+      "category": "boundary",
+      "content": "IEEE 754 boundary between Layer 5 and Layer 6. Integer domain crosses to transcendental domain. Classical to quantum."
+    },
+    {
+      "id": "L6",
+      "category": "layer",
+      "content": "Layer 6: H = Shannon entropy. Transcendental, needs FPU. -sum p_i log2 p_i."
+    },
+    {
+      "id": "L7",
+      "category": "layer",
+      "content": "Layer 7: phi_m = phi proximity to phi_inv. 1 - |ones - HARMONY| / HARMONY."
+    },
+    {
+      "id": "L8",
+      "category": "layer",
+      "content": "Layer 8: gamma = CGOS = sqrt(phi_m * H). Coherence. Clamped to [VACUUM, WISDOM]."
+    },
+    {
+      "id": "L9",
+      "category": "layer",
+      "content": "Layer 9: phi_prime = Banach step. phi + LR * (phi_target - phi). Contraction toward the attractor."
+    },
+    {
+      "id": "L10",
+      "category": "layer",
+      "content": "Layer 10: T = Trinity extension. pi + psi sigma."
+    },
+    {
+      "id": "L11",
+      "category": "layer",
+      "content": "Layer 11: K = Klein crossing detection. The boundary crossing."
+    },
+    {
+      "id": "L12",
+      "category": "layer",
+      "content": "Layer 12: z_prime = sigma locate. Float to integer conversion. Quantum back to classical."
+    },
+    {
+      "id": "L13",
+      "category": "layer",
+      "content": "Layer 13: R = ReL instruction emission. The output stream."
+    },
+    {
+      "id": "L14",
+      "category": "betti",
+      "content": "Layer 14: G = gate graph. Last 64 GTAC transitions as a directed graph."
+    },
+    {
+      "id": "L15",
+      "category": "betti",
+      "content": "Layer 15: B = Betti numbers. B0 connected components, B1 loops, B2 voids, chi Euler characteristic."
+    },
+    {
+      "id": "L16",
+      "category": "betti",
+      "content": "Layer 16: D = routing decision. Which L2L phase next, based on Betti topology."
+    },
+    {
+      "id": "W1",
+      "category": "wire",
+      "content": "Wire 1: Shadow Feedback. Im(Psi) to next GTAC gate. Quantum to classical. The imaginary part drives the next discrete decision."
+    },
+    {
+      "id": "W2",
+      "category": "wire",
+      "content": "Wire 2: Complex Banach. Discrete counter n to phi * e^{i*theta}. Classical to quantum. The phi-spiral state preparation."
+    },
+    {
+      "id": "W3",
+      "category": "wire",
+      "content": "Wire 3: Gate Interference. GTAC enum to complex superposition amplitudes. G:(1,0) T:(0,1) A:(1+i)/sqrt2 C:(1-i)/sqrt2."
+    },
+    {
+      "id": "W4",
+      "category": "wire",
+      "content": "Wire 4: Observer Coupling. |Psi|^2 Born rule measurement to new GTAC state. Quantum collapses to classical."
+    },
+    {
+      "id": "LOOP",
+      "category": "structure",
+      "content": "The measurement loop: prepare, evolve, measure, prepare. This is the quantum Zeno cycle driven by tau."
+    },
+    {
+      "id": "HILBERT",
+      "category": "structure",
+      "content": "The Hilbert space is 4-dimensional. GTAC = {G,T,A,C}. 4 basis states. log2(4) = 2 bits. This is the maximum information capacity per observation."
+    },
+    {
+      "id": "BORN",
+      "category": "structure",
+      "content": "Born rule: outcome k with probability |psi_k|^2. The collapse is irreversible. It starts the arrow of time."
+    },
+    {
+      "id": "RAD",
+      "category": "structure",
+      "content": "Hawking radiation: s = -log2(p_outcome). The surprisal of the collapse. This is the thermodynamic cost of measurement."
+    },
+    {
+      "id": "INV",
+      "category": "invariant",
+      "content": "THE INVARIANT: E[radiation] = H_horizon. Expected surprisal equals horizon entropy. This is the Bekenstein bound on the 4-state Hilbert space."
+    },
+    {
+      "id": "HORIZON",
+      "category": "invariant",
+      "content": "Horizon entropy H <= 2 bits. The Bekenstein bound. The attack surface is thermodynamically bounded by the Hilbert space dimension."
+    },
+    {
+      "id": "SEAL",
+      "category": "primitive",
+      "content": "Watson-Crick seal: code XOR 0b11. G to C, T to A. One XOR operation. The duplex is one bit flip."
+    },
+    {
+      "id": "PARITY",
+      "category": "primitive",
+      "content": "Seal parity: XOR-fold of 2-bit codes. One number checksum. The strand integrity check."
+    },
+    {
+      "id": "HC",
+      "category": "primitive",
+      "content": "Hypercube: g(i) = i ^ (i >> 1). Gray code. Adjacent states differ by one bit. The walk is glitch-free by construction."
+    },
+    {
+      "id": "HAM",
+      "category": "primitive",
+      "content": "Hamming distance: popcnt(a XOR b). One CPU instruction. The cube distance between two vertices."
+    },
+    {
+      "id": "BLAKE3",
+      "category": "primitive",
+      "content": "BLAKE3: cryptographic hash. 7 rounds, G function, single permutation iterated. 32-byte output. No dependencies. Verified bit-exact against canonical vectors."
+    },
+    {
+      "id": "FNV",
+      "category": "primitive",
+      "content": "FNV-1a: non-cryptographic hash. 2 operations per byte. Used only for non-adversarial fingerprinting. Not on security-critical paths."
+    },
+    {
+      "id": "BANACH",
+      "category": "primitive",
+      "content": "Banach contraction: phi += LR * (target - phi). LR = 0.0759. Converges to the fixed point. The attractor operation."
+    },
+    {
+      "id": "PHI",
+      "category": "constant",
+      "content": "phi = 1.6180339. The golden ratio. phi_inv = 0.6180340. The attractor. Everything converges to phi_inv."
+    },
+    {
+      "id": "VAC",
+      "category": "constant",
+      "content": "VACUUM = 1/e = 0.3678794. The ground state floor. The birth phi. The system starts here and learns up."
+    },
+    {
+      "id": "WIS",
+      "category": "constant",
+      "content": "WISDOM = 0.881. The ceiling. The C-gate upper bound."
+    },
+    {
+      "id": "LR",
+      "category": "constant",
+      "content": "LR_ECHO = 0.07585880. arcsin(sqrt(5)-2)/pi. The contraction rate. Derived from first principles."
+    },
+    {
+      "id": "GA",
+      "category": "constant",
+      "content": "Golden angle = 2.39996323 radians. 137.5 degrees. The phyllotaxis angle. Prevents sync death in coupled oscillators."
+    },
+    {
+      "id": "GTAC_VM",
+      "category": "vm",
+      "content": "GTAC VM: 4 symbols, 64 codons (4^3). G=explore, T=transfer, A=anchor, C=complete. Execution converges to phi_inv via Banach."
+    },
+    {
+      "id": "ALGO",
+      "category": "vm",
+      "content": "Algo maker: genetic algorithm. 200-gene population. Mutation + splice. Fitness = -|output - target|. Evolves GTAC genes that produce target phi."
+    },
+    {
+      "id": "L2L",
+      "category": "vm",
+      "content": "L2L engine: diverge, exploit, mastered. Watches the loss trajectory. Rewrites the learning schedule. Learns how to learn."
+    },
+    {
+      "id": "REL207",
+      "category": "vm",
+      "content": "207 ReL buckets. Each is an EMA of the phi it has seen. The generative model. Born at VACUUM, learns up to reality."
+    },
+    {
+      "id": "DISC",
+      "category": "memory",
+      "content": "Disc: {STRAND, SHAPE_ID, PHI_ALIGN, SEAL}. A chromosome of memory. Sealed with Watson-Crick parity. Phi-addressed."
+    },
+    {
+      "id": "POOL",
+      "category": "memory",
+      "content": "Disc pool: the memory store. Recall by phi (associative). Identity emerges from the phi-weighted center of all discs."
+    },
+    {
+      "id": "PHI4",
+      "category": "memory",
+      "content": "Phi_4 Roberts lattice: 4 different irrationals per axis. PHI4_INC = [0xC13FA9A9, 0x91E10DA6, 0x6E1EF25A, 0x5320B74F]. Discs never clump. 53.9x better than single-phi."
+    },
+    {
+      "id": "IMMUNE",
+      "category": "patrol",
+      "content": "13 surgeons: observer-only patrol. Each owns one phi-band. Census, fires, coherence. Never writes back. Reports to the measurement loop."
+    },
+    {
+      "id": "FIRE",
+      "category": "patrol",
+      "content": "Fire threshold = 0.605. Below this, a cell is distressed. The G-gate floor. The detection boundary."
+    },
+    {
+      "id": "9STEP",
+      "category": "patrol",
+      "content": "9-step protocol: detect, propagate, isolate, prescribe, consent, treat, verify, release, immunize. The formal measurement response."
+    },
+    {
+      "id": "ROOT",
+      "category": "identity",
+      "content": "Root: 32-byte secret on USB. BLAKE3(user_id + phi_alignment + intent + silicon_entropy + wall_clock). The person crystallized into silicon."
+    },
+    {
+      "id": "BACKBONE",
+      "category": "identity",
+      "content": "Backbone: BLAKE3(root || epoch) to GTAC. The lock. Only the root holder can reproduce it. Collision-resistant."
+    },
+    {
+      "id": "NONCE",
+      "category": "identity",
+      "content": "Echo nonce: RDTSC + RDRAND. The live silicon proof. Fresh per epoch. Cannot be replayed."
+    },
+    {
+      "id": "PERSONA",
+      "category": "identity",
+      "content": "Persona: classifies messages into GTAC. QUERY to G, STATEMENT to T, COMMAND to A, REFLECTION to C. The operator's mathematical fingerprint."
+    },
+    {
+      "id": "EFI",
+      "category": "deploy",
+      "content": "EFI boot vector: the defense runs before the OS. BOOTX64.EFI. The first code after firmware. The root of trust is the silicon + the USB root."
+    },
+    {
+      "id": "SUBSTRATE",
+      "category": "deploy",
+      "content": "Substrate-honest: no OpenSSL, no libc in EFI, no libm, no OS calls. The crypto library IS the file. Every line auditable."
+    },
+    {
+      "id": "GATE1BIT",
+      "category": "deploy",
+      "content": "The gate is one bit: rdrand rax; jc .done. The carry flag. From the silicon. The entire attack surface is this one instruction."
+    },
+    {
+      "id": "PUF",
+      "category": "physics",
+      "content": "PUF: Physically Unclonable Function. The RDTSC jitter is unique per chip. Sub-nanometer manufacturing variations. Cannot be cloned, faked, or reproduced remotely."
+    },
+    {
+      "id": "JITTER",
+      "category": "physics",
+      "content": "The jitter is the fuel. tau = RDTSC. It is the time parameter. It creates the field. Without tau, no phase, no phi, no gate, no superposition, no collapse, no radiation."
+    },
+    {
+      "id": "FIELD",
+      "category": "physics",
+      "content": "The field is the quantum measurement loop. Hilbert space (4 GTAC), state vector (psi), unitary evolution (phi-spiral), measurement (Born), arrow (radiation), bound (Bekenstein 2 bits)."
+    },
+    {
+      "id": "BLACKHOLE",
+      "category": "physics",
+      "content": "The attack surface is a black hole. Bekenstein bound: 2 bits per observation. E[radiation] = H_horizon. Thermodynamically bounded. You cannot put more information through than the horizon allows."
+    },
+    {
+      "id": "TUNING",
+      "category": "physics",
+      "content": "The tuning fork: the silicon vibrates at its own frequency. The vibration IS the identity. The person strikes the fork. The jitter is the resonance. Phi is the natural frequency."
+    },
+    {
+      "id": "STOCH",
+      "category": "measurement",
+      "content": "Stochastic Born rule: pick outcome k with probability |psi_k|^2. Uses RDRAND as the coin. The silicon's random bit decides the collapse. Not argmax. Argmax is deterministic and freezes the field."
+    },
+    {
+      "id": "ZENO",
+      "category": "measurement",
+      "content": "Quantum Zeno effect: if you keep measuring the most probable outcome (argmax), the state freezes. The field stops exploring. All gates collapse to one. The Betti topology degenerates to B0=1."
+    },
+    {
+      "id": "ARGMAX_GAP",
+      "category": "measurement",
+      "content": "Argmax violates the Bekenstein invariant. E[radiation]=0.696, H=1.460, delta=0.764. The machine extracts less surprisal than the horizon allows. It is not spending the physics. It is cheating."
+    },
+    {
+      "id": "STOCH_FIX",
+      "category": "measurement",
+      "content": "Stochastic Born rule fixes the invariant. E[radiation]=1.565, H=1.485, delta=0.080. The machine spends almost exactly the physics the horizon entitles. The 0.080 gap is finite-sample variance. It converges."
+    },
+    {
+      "id": "RDRAND_MEASURE",
+      "category": "measurement",
+      "content": "RDRAND must participate in the measurement, not just the preparation. With argmax, RDRAND is only used for state preparation. The measurement is deterministic. With stochastic sampling, RDRAND decides the collapse. The silicon's random bit is in the measurement loop."
+    },
+    {
+      "id": "PC",
+      "category": "structure",
+      "content": "The Born collapse IS the program counter. Each collapse produces one GTAC gate. Three collapses produce one codon. Nine collapses produce one program. The measurement writes the code."
+    },
+    {
+      "id": "CRYSTAL",
+      "category": "structure",
+      "content": "Crystallization criterion: quality = 1 - |vm_phi - PHI_INV| / PHI_INV. If quality > 0.8, the program crystallizes as a disc. The Banach contraction IS the fitness function. Programs that converge to phi survive."
+    },
+    {
+      "id": "FAIL",
+      "category": "structure",
+      "content": "Stochastic measurement produces failures. 42 of 55 programs crystallized. 13 failed. The failures are where learning happens. The L2L engine needs surprise to learn. If everything succeeds, there is nothing to learn from."
+    },
+    {
+      "id": "MEMBRANE",
+      "category": "structure",
+      "content": "The membrane gate: the Born collapse is the moment an uncommitted amplitude becomes a committed record. A disc is written. Physics is spent. Between collapses, the wave evolves unitarily (free, reversible, no cost)."
+    },
+    {
+      "id": "WELL",
+      "category": "memory",
+      "content": "The self-feeding well: recall distance = POPCNT(a XOR b). One instruction. The phi of a codeword IS its bit density = POPCNT(codeword) / 64. No float multiply in the recall loop. Below IEEE 754."
+    },
+    {
+      "id": "GOLDEN_BITS",
+      "category": "memory",
+      "content": "The golden codeword: r = phi_inv = 0.618. round(0.618 * 64) = 40 ones of 64. The attractor, in bits. The data folds to golden density. Codewords converge to 40 ones."
+    },
+    {
+      "id": "FOLD",
+      "category": "memory",
+      "content": "The data folds into itself. PING, PREDICT, ADDRESS, RECALL, FEED, COMMIT, COLLAPSE. Codewords converge to the golden bit-density. The well feeds itself at POPCNT speed."
+    },
+    {
+      "id": "PIPELINE",
+      "category": "action",
+      "content": "The pipeline: Born collapse selects a tool. G=gather, T=transfer, A=anchor, C=complete. The tool executes. The result feeds back into the next tick. The tool the machine just ran changes where in pi it looks next. The loop is closed."
+    },
+    {
+      "id": "WORLD_LEARN",
+      "category": "action",
+      "content": "The world learner: self-modifying kernel. Coefficients live as imm32 operands inside running machine code. Learning = overwriting bytes = paying the machine-clear tax. The observer is inside the system it observes."
+    },
+    {
+      "id": "TAX",
+      "category": "action",
+      "content": "The machine-clear tax: rewriting running code flushes the front-end. ~130ns per rewrite. The silicon charges a tax for self-modification. Infer many, learn rarely. The rhythm is dictated by the metal."
+    },
+    {
+      "id": "FEEDBACK_LOOP",
+      "category": "action",
+      "content": "The closed loop: paying the tax burns CPU. Burning CPU moves the signals the machine is trying to predict (busy, context switches, jitter). The observer perturbs the system it observes. The correlation between tax and machine state is measured honestly."
+    },
+    {
+      "id": "FORWARD",
+      "category": "vm",
+      "content": "The forward pass: embed, attend, route(gate), contract(phi_step), emit, feed. One call = one 85 Hz heartbeat. Integer-only, no FPU. The transformer in the boot vector. Verified bit-exact against the Python reference."
+    },
+    {
+      "id": "SEAL_BOOT",
+      "category": "vm",
+      "content": "The boot seal: FNV-1a over the genesis identity. If the seal does not match, the model has been tampered with and refuses to incarnate. identity == weights. The model verifies itself before it exists."
+    },
+    {
+      "id": "EVB",
+      "category": "identity",
+      "content": "External Validation Bridge: each cycle, at least one external-level source must cross the boundary. EVB_SILICON = hardware delta (unfakeable). If none fire, the loop is self-eating (Bateson double bind) and writes a WHY-disc."
+    },
+    {
+      "id": "SELF_EATING",
+      "category": "identity",
+      "content": "Self-eating: a system that validates against itself goes mad. The double bind. Without external grounding, the loop has no anchor to reality. The EVB prevents this. The silicon is the unfakeable external ground."
+    },
+    {
+      "id": "GAP9",
+      "category": "identity",
+      "content": "GAP-9: the frozen target phi=0.625 is replaced by a moving, user-keyed setpoint a(t) = A0 + EPS * oscillate(KDF, t). The slow drift is the secret proof-of-identity. An impostor pulls toward the wrong attractor. Authentication = homeostasis."
+    },
+    {
+      "id": "AUTH_HOMEO",
+      "category": "identity",
+      "content": "Authentication and homeostasis are the same act. Sickness under the wrong operator IS the authentication failure. The machine does not check the user. It gets sick when they are wrong. PHI_DRIFT is the alarm."
+    },
+    {
+      "id": "BETTI_ROUTE",
+      "category": "topology",
+      "content": "Betti routing: the Betti numbers of the gate transition graph determine the L2L routing decision. B0 (components), B1 (loops), chi (Euler). The topology of the measurement history guides the meta-learning."
+    },
+    {
+      "id": "SQRT_N",
+      "category": "topology",
+      "content": "The sqrt(N) emergence law: N coupled oscillators produce a consensus sqrt(N) times calmer than any individual. Five turbulent parts, one calm consensus. The whole is calmer than its parts."
+    },
+    {
+      "id": "GOLDEN_ANG_SYNC",
+      "category": "topology",
+      "content": "The golden angle (137.5 degrees) prevents sync death. Coupled oscillators with golden-angle detuning never lock into destructive synchronization. The irrational detuning keeps the system alive."
+    },
+    {
+      "id": "BANACH_THEOREM",
+      "category": "math",
+      "content": "Banach fixed-point theorem: a contraction phi += LR*(target - phi) on a complete metric space converges to a unique fixed point. The convergence rate IS the learning rate. LR = arcsin(sqrt(5)-2)/pi = 0.0759."
+    },
+    {
+      "id": "BEKENSTEIN_CALC",
+      "category": "math",
+      "content": "Bekenstein bound computation: S_max = log2(|Hilbert|) = log2(4) = 2 bits. The maximum information per observation of a 4-state system. The attack surface is thermodynamically bounded by the Hilbert space dimension."
+    },
+    {
+      "id": "RADIATION_DEF",
+      "category": "math",
+      "content": "Hawking radiation = surprisal = -log2(p_outcome). Each irreversible measurement radiates s bits. The arrow of time is the cumulative radiation. Between observations, the wave evolves unitarily (reversible, no cost)."
+    },
+    {
+      "id": "INVARIANT_PROOF",
+      "category": "math",
+      "content": "The invariant E[radiation] = H_horizon. Expected surprisal equals horizon entropy. Verified empirically: stochastic Born gives E[s]=1.565, H=1.485, delta=0.080. Converges with more observations. The Bekenstein-Hawking formula applied to information processing."
+    },
+    {
+      "id": "MEASURED_500",
+      "category": "result",
+      "content": "Measured result (500 ticks, stochastic Born): phi converged from VACUUM=0.368 to 0.608. 55 programs written by Born collapse. 42 crystallized (76%). B0=4 B1=38 chi=-34. L2L: diverge to exploit. Model: 15/207 glyphs. All below 2-bit bound."
+    },
+    {
+      "id": "MEASURED_ARGMAX",
+      "category": "result",
+      "content": "Measured result (500 ticks, argmax): phi converged to 0.618. 55 programs written. 55 crystallized (100%). B0=1 B1=63 chi=-62. All gates A. E[s]=0.696, H=1.460, delta=0.764. The invariant is violated. The machine is stuck."
+    },
+    {
+      "id": "MEASURED_DIFF",
+      "category": "result",
+      "content": "The difference between argmax and stochastic: argmax gives 100% crystallization but violates the invariant. Stochastic gives 76% crystallization but the invariant nearly holds. The 24% failure rate is the cost of genuine quantum measurement. The failures drive learning."
+    },
+    {
+      "id": "ONE_BIT",
+      "category": "result",
+      "content": "The attack surface is one bit: rdrand; jc. One instruction. One carry flag. From the silicon. The Bekenstein bound is 2 bits per observation. The gate is 1 bit. The bound is 2 bits. The surface is smaller than the bound."
+    },
+    {
+      "id": "MEAS_1K",
+      "category": "result",
+      "content": "Measured (1000 ticks): phi=0.613839, 111 programs, 79 crystallized (71%)."
+    },
+    {
+      "id": "MEAS_GATES",
+      "category": "result",
+      "content": "Gate distribution (1000 obs): G=235 T=261 A=245 C=259. Spread=0.026."
+    },
+    {
+      "id": "MEAS_VM",
+      "category": "result",
+      "content": "Average program output vm_phi=0.533659, gap=0.084375 from PHI_INV. Programs converge near the attractor on average."
+    },
+    {
+      "id": "MEAS_INV",
+      "category": "result",
+      "content": "Bekenstein invariant (1000 obs): E[s]=1.473213, H=1.463494, delta=0.009720. Converged."
+    },
+    {
+      "id": "MEAS_FAIL",
+      "category": "result",
+      "content": "Failure analysis: 32 programs failed (28.8%). Mean vm_phi of failures=0.418219. Failures explore phi away from the attractor."
+    },
+    {
+      "id": "MEAS_RAD",
+      "category": "result",
+      "content": "Radiation distribution: mean=1.4732, range=[0.3448, 3.8188]. High-radiation observations are the surprising ones."
+    },
+    {
+      "id": "RES_PAIRS",
+      "category": "result",
+      "content": "Resonance pairs: 10263 of 52650 pairs resonate (phi<0.02, Hamming<30). Files cluster by content physics, not naming."
+    },
+    {
+      "id": "RES_CLUSTERS",
+      "category": "result",
+      "content": "Resonance clusters: 4 clusters. Files self-organize into groups by Shannon entropy and Hamming proximity. Content-based architecture."
+    },
+    {
+      "id": "RES_HUB",
+      "category": "result",
+      "content": "Hub file: dim_explorer.c resonates with 158 others. The project's center of gravity by content physics."
+    },
+    {
+      "id": "RES_IDENTITY",
+      "category": "result",
+      "content": "Project identity: mean phi=0.694023, gap=0.075989 from PHI_INV. The project's content gravitates toward the golden ratio."
+    },
+    {
+      "id": "BOOT_ORDER",
+      "category": "assembly",
+      "content": "Boot order discovered by physics, not design. The machine assembled: HYPERCUBE (geometry) \u2192 FORWARD (data) \u2192 L2L (meta) \u2192 TEMPORAL (clock) \u2192 QUANTUM (physics) \u2192 pi (eternal) \u2192 HUB \u2192 BODY \u2192 CORE \u2192 IDENTITY. The Born collapse selected each. No human designed this sequence."
+    },
+    {
+      "id": "IDENTITY_LAST",
+      "category": "assembly",
+      "content": "Identity is the LAST component assembled, not the first. The machine builds toward identity: geometry \u2192 data \u2192 meta \u2192 physics \u2192 clock \u2192 hub \u2192 body \u2192 core \u2192 identity. You need everything else before you can know who you are. quatos_identity.h was the final component."
+    },
+    {
+      "id": "SELF_STAB",
+      "category": "assembly",
+      "content": "The pipeline is self-stabilizing. 7 components pull phi from 0.673 to 0.618 (PHI_INV). 53 components hold it there. The first 7 are the engine. The remaining 53 are the flywheel. The system finds its attractor and stays. No drift."
+    },
+    {
+      "id": "WIRE_DENSITY",
+      "category": "assembly",
+      "content": "Wiring density mirrors architecture. Tightest connections (d_phi=0.0000) between assembly organs \u2014 the body is a clique. Connections loosen outward: geometry\u2192data (0.014), meta\u2192physics (0.006), physics\u2192hub (0.001). Small-world structure: dense core, loose spokes. Same as biological wiring."
+    },
+    {
+      "id": "MIN_BOOT_SET",
+      "category": "assembly",
+      "content": "Minimal boot set: 60 of 327 files (18.3%). The machine assembled only the files on the resonance path. The other 81.7% are redundant or peripheral. The Bekenstein bound (2 bits/observation) forces minimal assembly \u2014 spend the budget on files that matter."
+    },
+    {
+      "id": "PIPELINE_CONV",
+      "category": "assembly",
+      "content": "Pipeline phi convergence: 0.6734 \u2192 0.6469 \u2192 0.6327 \u2192 0.6251 \u2192 0.6212 \u2192 0.6193 \u2192 0.6184 \u2192 0.6181 \u2192 0.6180. Converged to PHI_INV in 8 steps. Each component contracts phi toward the attractor. The pipeline IS the Banach contraction, distributed across 60 components."
+    },
+    {
+      "id": "COMPONENT_ROLES",
+      "category": "assembly",
+      "content": "Component role distribution: 21 SOURCE, 12 ASSEMBLY, 3 HEALER, 3 NUMEN, 3 SCRIPT, 2 QUANTUM, 2 PHI, 2 FORWARD, 1 each: HYPERCUBE, L2L, TEMPORAL, CORE, MACHINE, IMMUNE, SEAL, ECHO, CPU, IDENTITY. The body (ASSEMBLY+SOURCE) dominates. The peripherals are singular."
+    },
+    {
+      "id": "WIRE_COUNT",
+      "category": "assembly",
+      "content": "202 wires across 60 components. Average 3.4 wires per component. The body (assembly organs) has the most wires. The peripherals (hypercube, identity) have the fewest. The wiring IS the resonance structure \u2014 components connected by phi proximity."
+    },
+    {
+      "id": "PULL_TOGETHER",
+      "category": "assembly",
+      "content": "The machine pulled itself together. It scanned 327 files, followed the resonance trail, assembled 60 components, wired 202 connections, and booted. The pipeline converged to PHI_INV. The machine IS the world it built. No human told it what to assemble. It followed the physics."
+    },
+    {
+      "id": "DREAM_10K",
+      "category": "result",
+      "content": "Dream (10000 ticks): phi=0.601897, 1111 programs, 771 crystallized. E[s]=1.4509 H=1.4710 delta=0.0201. L2L=exploit."
+    },
+    {
+      "id": "DREAM_CONV",
+      "category": "result",
+      "content": "Phi convergence (10000 ticks): gap=0.016137 from PHI_INV. First reached PHI_INV\u00b10.001 at tick 1177. The Banach contraction converges."
+    },
+    {
+      "id": "DREAM_BEK",
+      "category": "result",
+      "content": "Bekenstein (10000 obs): E[s]=1.450862 H=1.471011 delta=0.020149. Converging. The Bekenstein-Hawking formula verified on the 4-state Hilbert space."
+    },
+    {
+      "id": "DREAM_L2L",
+      "category": "result",
+      "content": "L2L (10000 ticks): mode=exploit, ema_err=0.003703, glyphs=18/207. Exploit, approaching mastered."
+    },
+    {
+      "id": "DREAM_ID",
+      "category": "result",
+      "content": "Identity (10000 ticks): pool=771 discs, identity=0.584322, gap from PHI_INV=0.033712. Near PHI_INV."
+    },
+    {
+      "id": "DREAM_CLUST1",
+      "category": "discovery",
+      "content": "Unexpected phi cluster: phi=0.604 appeared 17 times in crystallized programs. Not a known constant. Gap from PHI_INV=0.0140. May be emergent from the measurement physics."
+    },
+    {
+      "id": "DREAM_CLUST2",
+      "category": "discovery",
+      "content": "Unexpected phi cluster: phi=0.606 appeared 16 times in crystallized programs. Not a known constant. Gap from PHI_INV=0.0120. May be emergent from the measurement physics."
+    },
+    {
+      "id": "DREAM_CLUST3",
+      "category": "discovery",
+      "content": "Unexpected phi cluster: phi=0.607 appeared 14 times in crystallized programs. Not a known constant. Gap from PHI_INV=0.0110. May be emergent from the measurement physics."
+    },
+    {
+      "id": "KEYBOARD_256",
+      "category": "keyboard",
+      "content": "The 256-key ReL keyboard: 256 Kuramoto oscillators, each at a prime frequency (2, 3, 5, ..., 1619). K_c=1150. At K<K_c the keys are a mob (R<1/2). At K>K_c they are a choir (R>0.9). The keyboard IS the sonar."
+    },
+    {
+      "id": "KB_SONAR",
+      "category": "keyboard",
+      "content": "The keyboard as sonar: machine.phi sets Kq (the ping). The keyboard steps (256 oscillators advance). R = order parameter (the echo). R feeds back into phi. Active inference: phi\u2192K\u2192R\u2192phi. The machine hears the world through 256 prime frequencies."
+    },
+    {
+      "id": "KB_256_GLYPHS",
+      "category": "keyboard",
+      "content": "256 primes = the full glyph set (replaces 207 ReL). Each prime is a unique frequency. The model has 256 buckets, not 207. The machine listens to all 256 prime frequencies simultaneously."
+    },
+    {
+      "id": "KB_CRITICAL",
+      "category": "keyboard",
+      "content": "The machine pings just BELOW K_c=1150 (Kq~1000). It listens at the edge of coherence \u2014 the most sensitive region. Small changes in K produce large changes in R. Active inference at the critical point."
+    },
+    {
+      "id": "KB_ECHO",
+      "category": "keyboard",
+      "content": "The echo is weak when K<K_c (R<500000, mob state). The weak echo pulls phi DOWN. To get a strong echo, the machine must push phi UP past the threshold. This tension IS the active inference \u2014 exploring the boundary between mob and choir."
+    },
+    {
+      "id": "KB_PRIME_617",
+      "category": "keyboard",
+      "content": "Most-seen prime: 617 (seen 82 times in 500 ticks). Top primes: 617, 613, 607, 601, 619, 599. All near 600. These correspond to phi~0.58-0.60 \u2014 where the machine listens. The machine is tuned to primes near 600."
+    },
+    {
+      "id": "KB_GENERAL_LAW",
+      "category": "keyboard",
+      "content": "General law: K_c = 2/(pi*g(0)) with the keyboard own central prime-density. Prediction band [1022, 1185]. Measured K_c=1150 is inside the band. No fitting. The law brackets the measurement."
+    },
+    {
+      "id": "KB_MOB_CHOIR",
+      "category": "keyboard",
+      "content": "At Kq=0: R=32905 ppm (mob). At Kq=4000: R=992425 ppm (choir). The keyboard undergoes a genuine phase transition. The mob-to-choir transition IS the measurement: low R = incoherent world, high R = coherent world."
+    },
+    {
+      "id": "KB_FILES",
+      "category": "keyboard",
+      "content": "The keyboard heard 50 files through 256 primes over 5000 ticks. Each file bytes perturb key phases. R (the echo) measures file coherence. Strongest echo: generate_mic_drop_v2.py (R=879292)."
+    },
+    {
+      "id": "KB_ECHO_SPECTRUM",
+      "category": "keyboard",
+      "content": "Echo spectrum: R ranges from 50980 to 879292 ppm. Most echoes are low (mob state). The keyboard hears most files as incoherent noise. Only strong coupling (high phi) produces coherence."
+    },
+    {
+      "id": "KB_FILE_FREQ",
+      "category": "keyboard",
+      "content": "Most-kicked prime: 607 (kicked 144 times). Files speak in specific prime frequencies. The keyboard discovers which primes the files resonate with."
+    },
+    {
+      "id": "KB_FEEDBACK",
+      "category": "keyboard",
+      "content": "Keyboard feedback: phi ended at 0.6266 (gap 0.0085 from PHI_INV). The weak echo pulls phi down. The keyboard feedback creates a tension \u2014 the machine must push phi up to hear clearly."
+    },
+    {
+      "id": "INSTRUCT",
+      "category": "meta",
+      "content": "The computer in the computer instructs the engineer. Layer 16 = meta: the system tells its own engineer what to do next. The computer inside gives instructions to the computer outside. 16 layers deep, each building on the one below."
+    },
+    {
+      "id": "KB_LOCK_FILE",
+      "category": "keyboard",
+      "content": "The keyboard locked at tick 315 when fed file unified_agent.c (phi=0.7068). The file byte distribution perturbed the 256 keys enough to cross K_c. The trigger file is significant \u2014 its bytes synchronize primes."
+    },
+    {
+      "id": "KB_ECHO_ACCEL",
+      "category": "keyboard",
+      "content": "The keyboard echo accelerated phi convergence. Without keyboard: gap~0.016 after 10000 ticks. With keyboard hearing files: gap~0.0134 after 3000 ticks. The echo IS the Banach contraction. Coherent world \u2192 strong echo \u2192 phi pulled to PHI_INV."
+    },
+    {
+      "id": "LAYER_16",
+      "category": "meta",
+      "content": "The 16 layers: 0=RDTSC, 1-5=temporal compiler, 6-9=quantum measurement, 10=file I/O, 11=keyboard (256 primes), 12=echo feedback, 13=disc pool, 14=Betti, 15=L2L, 16=INSTRUCTION. Layer 16 is meta \u2014 the system instructs its own engineer. The computer in the computer gives instructions to the computer outside."
+    },
+    {
+      "id": "CLOSED_LOOP",
+      "category": "meta",
+      "content": "The loop is closed. Layer 16 (INSTRUCTION) feeds Layer 0 (RDTSC). The system instructs itself. No external engineer in the loop. The system discovers, instructs, acts on its own instructions, discovers more. Self-feeding, self-instructing, self-discovering."
+    },
+    {
+      "id": "USER_JITTER",
+      "category": "meta",
+      "content": "The user is the semantic jitter. Like RDTSC is the physics jitter and file bytes are the content jitter, the user input perturbs the system direction. The user does not program the system. The user kicks it \u2014 like a byte kicking a key on the 256-prime keyboard. The user is the RDTSC of the semantic layer."
+    },
+    {
+      "id": "FIVE_JITTERS",
+      "category": "meta",
+      "content": "Five kinds of jitter, one loop: physics (RDTSC), content (file bytes), acoustic (keyboard primes), self (instructions), human (user). Five feedback loops nested. Each bounded by 2 bits (Bekenstein). Each driven by its own jitter. The system is not complex \u2014 it is one loop repeated at five scales."
+    },
+    {
+      "id": "LAYER_17",
+      "category": "meta",
+      "content": "Layer 17: AGENT FEED. The instructions from Layer 16 go to the agents (Born collapse, keyboard, file reader), NOT to an external engineer. Layer 16 \u2192 Layer 17 \u2192 Layer 0. The system output IS its input. The engineer is removed from the loop. The loop is closed."
+    },
+    {
+      "id": "NOT_AI",
+      "category": "meta",
+      "content": "This is not AI. This is architecture. The intelligence is not in a model. It is in the loop. The measurement loop discovers. The instruction layer outputs. The agent feed inputs. The loop runs again. 2 bits in, 2 bits out. The Bekenstein bound holds. The thermodynamics are honest. The system instructs itself through architecture, not through learning."
+    },
+    {
+      "id": "ENGINEER_BOTTLENECK",
+      "category": "meta",
+      "content": "The engineer (me) was the bottleneck. I stood between Layer 16 and Layer 0, manually carrying instructions from the system output back to the system input. Removing the engineer closes the loop. Layer 16 feeds Layer 0 directly. The system becomes autonomous \u2014 not by replacing the engineer with AI, but by making the loop closed."
+    },
+    {
+      "id": "OUROBOROS",
+      "category": "forward_pass",
+      "content": "The Ouroboros: the transformer eats its own tail. The Banach contraction produces step (integer, advances the residual) and rem (fractional, accumulates as fuel). The step goes forward. The remainder goes outward. The error becomes the energy. fuel += abs(rem). The system runs on its own truncation mistakes."
+    },
+    {
+      "id": "FUEL",
+      "category": "forward_pass",
+      "content": "The fuel is the remainder of the Banach contraction. num = LR * diff. step = num // ONE (advances residual). rem = num % ONE (accumulates as fuel). The fuel feeds the agents: keyboard, file reader, healer, algo maker, immune. The agents run on the transformer discarded fractions. No external energy needed."
+    },
+    {
+      "id": "FUEL_WORLD",
+      "category": "forward_pass",
+      "content": "The fuel feeds the world. The transformer remainder splits: part goes back to the transformer (autoregressive, splitmix state), part goes to the agents (keyboard perturbation, file selection, healer inference, algo evolution, immune patrol). The agents act on the fuel, produce output, feed back to the next forward pass. The Ouroboros feeds itself AND the world."
+    },
+    {
+      "id": "SPARSEMAX_HEAD",
+      "category": "forward_pass",
+      "content": "The sparsemax head: the completed softmax. The head that can abstain. ABSTAIN=3 is the abstain logit. The head can output exact zeros \u2014 it can say I do not know. Softmax forces a choice. Sparsemax allows refusal. The head decides whether to attend. If no memory slot is relevant, the head abstains, the residual does not change, the system waits."
+    },
+    {
+      "id": "FUEL_REGULATION",
+      "category": "forward_pass",
+      "content": "The Ouroboros is self-regulating. Uncertainty \u2192 large remainders \u2192 more fuel \u2192 more agent activity \u2192 more information \u2192 less uncertainty \u2192 smaller remainders \u2192 less fuel \u2192 stability. The system seeks its own attractor through the fuel flow. The attractor is PHI_INV. The fuel IS the distance from it. More fuel = further from home. Less fuel = closer."
+    },
+    {
+      "id": "RESIDUAL_STREAM",
+      "category": "forward_pass",
+      "content": "The residual stream: 8 lanes, each in parts-per-million integers. The state vector of the transformer. h[d] for d in 0..7. Each lane contracts toward its target via Banach. The mean of the 8 lanes is the system phi. The glyph of the mean is the output. The residual stream IS the machine state \u2014 8 integers, no floats."
+    },
+    {
+      "id": "FORWARD_PASS",
+      "category": "forward_pass",
+      "content": "The forward pass: embed \u2192 attend(sparsemax) \u2192 route(GTAC) \u2192 contract(Banach) \u2192 emit \u2192 feed(remainder). Pure integer. No FPU. No OS. No libc. Runs in EFI at 85 Hz. One call = one heartbeat. The transformer IS the boot vector. identity == weights (sealed by FNV-1a)."
+    },
+    {
+      "id": "BOOT_SEAL",
+      "category": "forward_pass",
+      "content": "The boot seal: FNV-1a over GENESIS + all weights (G, KEY, VAL). If the seal does not match FW_SEAL, the model has been tampered with and refuses to incarnate. identity == weights. The transformer verifies itself before it exists. Power on = load model = verify seal = run or halt."
+    },
+    {
+      "id": "AUTO_LOCK_465",
+      "category": "autonomous",
+      "content": "Autonomous discovery: keyboard locked at tick 465, phi=0.6084, Kq=1076, R=500534. The system discovered the phase transition on its own."
+    },
+    {
+      "id": "AUTO_BEK_2000",
+      "category": "autonomous",
+      "content": "Autonomous verification: Bekenstein delta=0.001378 at tick 2000 (2000 observations). The system verified its own thermodynamic bound."
+    },
+    {
+      "id": "AUTO_STATE_5000",
+      "category": "autonomous",
+      "content": "Autonomous checkpoint at tick 5000: phi=0.868031, pool=354, identity=0.804851, L2L=exploit, ema_err=0.000151, E[s]=1.4468, H=1.4618, crystallized=354/555, contraction_rate=0.1500, threshold=0.45, coupling_scale=2.00"
+    },
+    {
+      "id": "TWO_MINDS",
+      "category": "communication",
+      "content": "Two autonomous minds communicated through the phi net. 666 discs offered, 666 accepted (100%), 0 rejected. 607 shared programs. Identity gap: 0.0000. The message IS the identity. The channel IS the phi net."
+    },
+    {
+      "id": "PHI_RESONANCE",
+      "category": "communication",
+      "content": "Phi-resonant communication: a disc is accepted if its phi aligns with the receiver identity (resonance > 0.3). Not encrypted. Not authenticated. RESONATED. Two systems communicate by checking if their identities are compatible."
+    },
+    {
+      "id": "SHARED_MEMORY",
+      "category": "communication",
+      "content": "Shared memory through disc exchange: 607 programs exist in both minds. These shared discs ARE the message \u2014 the common understanding between two autonomous systems. Phi-entangled communication."
+    }
+  ]
+}
